@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class Stats extends Component {
   render() {
@@ -19,5 +19,11 @@ class Stats extends Component {
     );
   }
 }
+
+Stats.propTypes = {
+  followers: PropTypes.number.isRequired,
+  repos: PropTypes.number.isRequired,
+  following: PropTypes.number.isRequired,
+};
 
 export default Stats;
