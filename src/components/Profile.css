@@ -1,0 +1,41 @@
+.profile {
+  width: 400px;
+  margin: 0 auto 10px;
+}
+
+.profile-info {
+  background: #fff;
+  padding: 1.875rem .9375rem;
+
+}
+
+.profile-info a {
+  text-decoration: none;
+}
+
+.profile-avatar {
+  padding: 10px 20px;
+  float: left;
+}
+
+.profile-avatar img {
+  width:6.25rem;
+  height:6.25rem;
+  border-radius:50%;
+  display: block;
+  box-shadow:0 0 .0625rem rgba(0,0,0,.5);
+}
+
+.profile-details h2, .profile-details h3 {
+  text-align: center;
+}
+
+.profile-details h2 a {
+  font-size:1.65rem;
+  color: #388893;
+}
+
+.profile-info h3 {
+  font-size:1.1885rem;
+  color: #ccc;
+}
