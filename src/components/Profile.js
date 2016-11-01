@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Profile.css';
 
 class Profile extends Component {
   render() {
@@ -13,6 +12,19 @@ class Profile extends Component {
             <h2><a href='https://github.com/devstaff-crete' title='devstaff-crete' target="_blank">Devstaff</a></h2>
             <h3>Crete, Greece</h3>
           </div>
+        </div>
+        <div className="profile-stats">
+          <ul>
+              <li>
+                <i>29</i><span>Followers</span>
+              </li>
+              <li>
+                <i>15</i><span>Repositories</span>
+              </li>
+              <li>
+                <i>16</i><span>Following</span>
+              </li>
+          </ul>
         </div>
       </div>
     );
