@@ -2,4 +2,139 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #eee;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.search-box form {
+  display: inline-flex;
+}
+
+.search-box input[type='search'] {
+  width: 280px; 
+  font: 14px sans-serif;
+  color: #666;
+  border: 0;
+  padding: 12px;
+	background: #ddd;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.search-box button {
+  background-color: #388893;
+  border: none;
+  color: white;
+  height: 40px;
+  padding: 0px 38px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin-left: 2px;
+  cursor: pointer;
+}
+
+.profile {
+  width: 400px;
+  margin: 0 auto 10px;
+}
+
+.profile-info {
+  background: #fff;
+  padding: 30px 10px 0;
+
+}
+
+.profile-info a {
+  text-decoration: none;
+}
+
+.profile-avatar {
+  padding: 0 20px;
+  float: left;
+}
+
+.profile-avatar img {
+  width:6.25rem;
+  height:6.25rem;
+  border-radius:50%;
+  display: block;
+  box-shadow:0 0 .0625rem rgba(0,0,0,.7);
+}
+
+.profile-details {
+  padding: 15px 0;
+}
+
+.profile-details h2, .profile-details h3 {
+  text-align: center;
+  margin: 0;
+}
+
+.profile-details h2 a {
+  font-size:1.65rem;
+  color: #388893;
+}
+
+.profile-info h3 {
+  font-size:1.1885rem;
+  color: #ccc;
+}
+
+.profile-stats {
+  background: #388893;
+  color:#fff;
+  text-align: center;
+  padding: 15px 10px 10px;
+}
+
+.profile-stats ul {
+  padding: 0;
+}
+.profile-stats li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 40px;
+}
+.profile-stats li:last-child {
+  margin-right:0;
+}
+.profile-stats a { 
+  color:#fff;
+}
+
+.profile-stats i { 
+  font-size:1.5rem;
+  font-weight:700;
+  font-style: normal;
+  display: block;
+}
+
+.profile-stats span {
+  font-size:.844rem;
+  letter-spacing:.0625rem;
+  color:#fff;
 }
