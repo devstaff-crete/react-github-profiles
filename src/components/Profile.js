@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Stats from './Stats';
 
 class Profile extends Component {
   render() {
@@ -13,19 +14,7 @@ class Profile extends Component {
             <h3>Crete, Greece</h3>
           </div>
         </div>
-        <div className="profile-stats">
-          <ul>
-              <li>
-                <i>29</i><span>Followers</span>
-              </li>
-              <li>
-                <i>15</i><span>Repositories</span>
-              </li>
-              <li>
-                <i>16</i><span>Following</span>
-              </li>
-          </ul>
-        </div>
+        <Stats />
       </div>
     );
   }
