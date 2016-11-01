@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Stats.css';
 
 class Stats extends Component {
   render() {
@@ -7,13 +6,13 @@ class Stats extends Component {
       <div className="profile-stats">
         <ul>
             <li>
-              <i>29</i><span>Followers</span>
+              <i>{this.props.followers}</i><span>Followers</span>
             </li>
             <li>
-              <i>15</i><span>Repositories</span>
+              <i>{this.props.repos}</i><span>Repositories</span>
             </li>
             <li>
-              <i>16</i><span>Following</span>
+              <i>{this.props.following}</i><span>Following</span>
             </li>
         </ul>
       </div>

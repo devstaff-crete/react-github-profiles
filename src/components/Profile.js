@@ -14,7 +14,7 @@ class Profile extends Component {
             <h3>Crete, Greece</h3>
           </div>
         </div>
-        <Stats />
+        <Stats followers="29" repos="15" following="16" />
       </div>
     );
   }
