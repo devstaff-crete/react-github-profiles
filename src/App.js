@@ -1,32 +1,42 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import ProfileList from './components/ProfileList';
+import 'whatwg-fetch';
+
+function fetchGithubProfile(username) {
+  let url = `https://api.github.com/users/${username}`;
+
+  return fetch(url)
+    .then((res) => res.json())
+    .then((data) => (
+      {
+        githubUrl: data.html_url,
+        username: data.login,
+        imageUrl: data.avatar_url,
+        name: data.name,
+        location: data.location,
+        stats: {
+          repos: data.public_repos,
+          followers: data.followers,
+          following: data.following,
+        }
+      }
+    ))
+    .catch((error) => console.log('Github is down!'))
+}
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      profiles: [{
-        githubUrl: 'https://github.com/devstaff-crete',
-        username: 'devstaff-crete',
-        imageUrl: 'https://avatars0.githubusercontent.com/u/13062423?v=3&s=200',
-        name: 'Devstaff',
-        location: 'Crete, Greece',
-        stats: {
-          followers: 29, repos: 15, following: 16
-        }
-      }, {
-        githubUrl: 'https://github.com/gsaslis',
-        username: 'gsaslis',
-        imageUrl: 'https://avatars3.githubusercontent.com/u/2420882?v=3&s=466',
-        name: 'Yorgos Saslis',
-        location: 'Crete, Greece',
-        stats: {
-          followers: 13, repos: 31, following: 9
-        }
-      }]
+      profiles: [],
     }
+  }
+
+  componentDidMount() {
+    fetchGithubProfile('devstaff-crete')
+      .then(profile => this.setState({ profiles: [profile, ...this.state.profiles] }));
   }
 
   render() {
