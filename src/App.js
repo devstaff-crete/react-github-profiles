@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import ProfileList from './components/ProfileList';
+import Search from './components/Search';
 import 'whatwg-fetch';
 
 function fetchGithubProfile(username) {
@@ -46,6 +47,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2># Devstaff meetup - React.js #</h2>
         </div>
+        <Search />
         <ProfileList profiles={this.state.profiles} />
       </div>
     );
