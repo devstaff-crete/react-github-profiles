@@ -4,11 +4,26 @@ import ProfileList from './components/ProfileList';
 import Search from './components/Search';
 import 'whatwg-fetch';
 
+function checkStatus(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return response;
+  } else {
+    const error = new Error(response.statusText);
+    error.response = response;
+    throw error;
+  }
+}
+
+function parseJSON(response) {
+  return response.json();
+}
+
 function fetchGithubProfile(username) {
   let url = `https://api.github.com/users/${username}`;
 
   return fetch(url)
-    .then((res) => res.json())
+    .then(checkStatus)
+    .then(parseJSON)
     .then((data) => (
       {
         githubUrl: data.html_url,
@@ -22,8 +37,7 @@ function fetchGithubProfile(username) {
           following: data.following,
         }
       }
-    ))
-    .catch((error) => console.log('Github is down!'))
+    ));
 }
 
 class App extends Component {
@@ -40,7 +54,8 @@ class App extends Component {
   onSearch(username) {
     if (username) {
       fetchGithubProfile(username)
-        .then(profile => this.setState({ profiles: [profile, ...this.state.profiles] }));
+        .then(profile => this.setState({ profiles: [profile, ...this.state.profiles] }))
+        .catch(error => console.log(`Something went wrong: ${error.message}`));
     }
   }
 
