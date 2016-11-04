@@ -30,8 +30,17 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    this.onSearch = this.onSearch.bind(this);
+
     this.state = {
       profiles: [],
+    }
+  }
+
+  onSearch(username) {
+    if (username) {
+      fetchGithubProfile(username)
+        .then(profile => this.setState({ profiles: [profile, ...this.state.profiles] }));
     }
   }
 
@@ -47,7 +56,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2># Devstaff meetup - React.js #</h2>
         </div>
-        <Search />
+
+        <Search onSubmit={this.onSearch} />
+
         <ProfileList profiles={this.state.profiles} />
       </div>
     );
